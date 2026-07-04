@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { onValue, ref } from "firebase/database";
 import { db } from "@/lib/firebase";
-import styles from "./admin.module.css";
 
 type Reserva = {
 	id: string;
@@ -97,34 +96,31 @@ export default function AdminPage() {
 	}, []);
 
 	return (
-		<main className={styles.adminPage}>
-			<section
-				className={styles.adminShell}
-				aria-labelledby="admin-title"
-			>
-				<header className={styles.adminHeader}>
+		<main className="adminPage">
+			<section className="adminShell" aria-labelledby="admin-title">
+				<header className="adminHeader">
 					<div>
-						<p className={styles.eyebrow}>Panel de inscripciones</p>
+						<p className="eyebrow">Panel de inscripciones</p>
 						<h1 id="admin-title">Reservas recibidas</h1>
-						<p className={styles.adminIntro}>
+						<p className="adminIntro">
 							Acá podés revisar todas las personas interesadas y
 							contactarlas directo desde la plataforma.
 						</p>
 					</div>
 
-					<div className={styles.adminContactCard}>
+					<div className="adminContactCard">
 						<p>Contactar rápido</p>
 						<a
 							href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20Bride%20Experience"
 							target="_blank"
 							rel="noreferrer"
-							className={`${styles.adminCta} ${styles.adminCtaWhatsapp}`}
+							className="adminCta adminCtaWhatsapp"
 						>
 							WhatsApp
 						</a>
 						<a
 							href="mailto:hola@brideexperience.com?subject=Consulta%20Bride%20Experience"
-							className={`${styles.adminCta} ${styles.adminCtaMail}`}
+							className="adminCta adminCtaMail"
 						>
 							Enviar mail
 						</a>
@@ -132,35 +128,33 @@ export default function AdminPage() {
 				</header>
 
 				{loading ? (
-					<div className={styles.adminState}>
-						Cargando inscripciones…
-					</div>
+					<div className="adminState">Cargando inscripciones…</div>
 				) : reservas.length === 0 ? (
-					<div className={`${styles.adminState} ${styles.empty}`}>
+					<div className="adminState empty">
 						Todavía no hay inscripciones registradas.
 					</div>
 				) : (
-					<div className={styles.adminList}>
+					<div className="adminList">
 						{reservas.map((reserva) => (
 							<article
-								className={styles.reservationCard}
+								className="reservationCard"
 								key={reserva.id}
 							>
-								<div className={styles.reservationTop}>
+								<div className="reservationTop">
 									<div>
 										<h2>
 											{reserva.nombre || "Sin nombre"}
 										</h2>
-										<p className={styles.reservationDate}>
+										<p className="reservationDate">
 											{formatDateTime(reserva.creadoEn)}
 										</p>
 									</div>
-									<span className={styles.reservationBadge}>
+									<span className="reservationBadge">
 										Reserva
 									</span>
 								</div>
 
-								<div className={styles.reservationBody}>
+								<div className="reservationBody">
 									<p>
 										<strong>Email:</strong>{" "}
 										{reserva.email ? (
@@ -185,7 +179,7 @@ export default function AdminPage() {
 									</p>
 								</div>
 
-								<div className={styles.reservationActions}>
+								<div className="reservationActions">
 									{reserva.telefono ? (
 										<a
 											href={buildWhatsAppLink(
@@ -193,7 +187,7 @@ export default function AdminPage() {
 											)}
 											target="_blank"
 											rel="noreferrer"
-											className={`${styles.actionLink} ${styles.whatsapp}`}
+											className="actionLink whatsapp"
 										>
 											WhatsApp
 										</a>
@@ -201,7 +195,7 @@ export default function AdminPage() {
 									{reserva.email ? (
 										<a
 											href={`mailto:${reserva.email}?subject=Consulta%20Bride%20Experience`}
-											className={`${styles.actionLink} ${styles.mail}`}
+											className="actionLink mail"
 										>
 											Mail
 										</a>

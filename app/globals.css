@@ -745,16 +745,297 @@ main {
   }
 }
 
-@media (min-width: 768px) {
-  .admin-shell {
-    padding: 24px;
+/* ---------- Panel de administración — mobile-first, estética Bride Experience ---------- */
+
+.adminPage {
+  min-height: 100svh;
+  background: var(--ivory, #f2eee6);
+  padding: 20px 14px 56px;
+}
+
+.adminShell {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.adminHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--sand, #e4ddd0);
+}
+
+.adminHeader .eyebrow {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--taupe, #8b7c6a);
+  margin-bottom: 6px;
+}
+
+.adminHeader h1 {
+  font-family: var(--font-display, Georgia), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--taupe-deep, #6e6152);
+}
+
+.adminIntro {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--taupe-deep, #6e6152);
+  max-width: 46ch;
+}
+
+.adminContactCard {
+  background: var(--white, #fffdf9);
+  border: 1px solid var(--sand, #e4ddd0);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.adminContactCard p {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--taupe-deep, #6e6152);
+}
+
+.adminCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 16px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--taupe, #8b7c6a);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.adminCtaWhatsapp {
+  background: var(--taupe, #8b7c6a);
+  color: var(--white, #fffdf9);
+}
+
+.adminCtaWhatsapp:hover,
+.adminCtaWhatsapp:focus-visible {
+  background: var(--taupe-deep, #6e6152);
+  border-color: var(--taupe-deep, #6e6152);
+}
+
+.adminCtaMail {
+  background: transparent;
+  color: var(--taupe-deep, #6e6152);
+}
+
+.adminCtaMail:hover,
+.adminCtaMail:focus-visible {
+  background: var(--taupe, #8b7c6a);
+  color: var(--white, #fffdf9);
+}
+
+.adminState {
+  background: var(--white, #fffdf9);
+  border: 1px solid var(--sand, #e4ddd0);
+  padding: 44px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--taupe-deep, #6e6152);
+  letter-spacing: 0.04em;
+}
+
+.empty {
+  font-style: italic;
+}
+
+.adminList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reservationCard {
+  background: var(--white, #fffdf9);
+  border: 1px solid var(--sand, #e4ddd0);
+  padding: 18px 16px;
+}
+
+.reservationTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.reservationTop h2 {
+  font-family: var(--font-display, Georgia), Georgia, serif;
+  font-weight: 500;
+  font-size: 1.08rem;
+  letter-spacing: 0.04em;
+  color: var(--taupe-deep, #6e6152);
+  overflow-wrap: anywhere;
+}
+
+.reservationDate {
+  margin-top: 3px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--taupe, #8b7c6a);
+}
+
+.reservationBadge {
+  flex-shrink: 0;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--taupe-deep, #6e6152);
+  background: var(--paper, #f7f4ee);
+  border: 1px solid var(--sand, #e4ddd0);
+  padding: 5px 10px;
+}
+
+.reservationBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.reservationBody p {
+  overflow-wrap: anywhere;
+}
+
+.reservationBody strong {
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--taupe-deep, #6e6152);
+}
+
+.reservationBody a {
+  color: var(--taupe-deep, #6e6152);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--taupe, #8b7c6a);
+}
+
+.reservationActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--sand, #e4ddd0);
+}
+
+.actionLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 14px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--taupe, #8b7c6a);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.whatsapp {
+  background: var(--taupe, #8b7c6a);
+  color: var(--white, #fffdf9);
+}
+
+.whatsapp:hover,
+.whatsapp:focus-visible {
+  background: var(--taupe-deep, #6e6152);
+}
+
+.mail {
+  background: transparent;
+  color: var(--taupe-deep, #6e6152);
+}
+
+.mail:hover,
+.mail:focus-visible {
+  background: var(--taupe, #8b7c6a);
+  color: var(--white, #fffdf9);
+}
+
+.adminPage a:focus-visible {
+  outline: 2px solid var(--taupe, #8b7c6a);
+  outline-offset: 2px;
+}
+
+@media (min-width: 480px) {
+  .adminPage {
+    padding: 32px 24px 72px;
   }
 
-  .admin-header {
+  .adminContactCard {
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
   }
 
-  .admin-toolbar {
-    padding: 14px 16px;
+  .adminContactCard p {
+    flex-basis: 100%;
+  }
+
+  .adminCta {
+    flex: 1;
+  }
+
+  .reservationActions {
+    flex-direction: row;
+  }
+
+  .actionLink {
+    flex: 1;
+  }
+}
+
+@media (min-width: 720px) {
+  .adminHeader {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .adminContactCard {
+    flex-direction: column;
+    flex: 0 0 240px;
+  }
+
+  .adminContactCard p {
+    flex-basis: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adminPage * {
+    transition: none !important;
   }
 }
