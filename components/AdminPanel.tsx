@@ -196,14 +196,71 @@ export default function AdminPanel() {
 						</p>
 						<p className="admin-hint">Actualizá en un toque</p>
 					</div>
-					<button
-						type="button"
-						className="ghost-button"
-						onClick={() => cargar(password)}
-						disabled={cargando}
-					>
-						{cargando ? "Actualizando…" : "Actualizar"}
-					</button>
+					<div className="admin-toolbar-actions">
+						<button
+							type="button"
+							className="ghost-button"
+							onClick={() => cargar(password)}
+							disabled={cargando}
+						>
+							{cargando ? "Actualizando…" : "Actualizar"}
+						</button>
+						<button
+							type="button"
+							className="ghost-button"
+							onClick={() => {
+								if (!registros.length) {
+									alert("No hay reservas para descargar.");
+									return;
+								}
+
+								const headers = [
+									"Nombre",
+									"Email",
+									"Teléfono",
+									"Fecha Casamiento",
+									"Mensaje",
+									"Recibida",
+								];
+
+								const rows = registros.map((registro) => [
+									registro.nombre ?? "",
+									registro.email ?? "",
+									registro.telefono ?? "",
+									registro.fechaCasamiento ?? "",
+									registro.mensaje ?? "",
+									formatearFecha(registro.creadoEn),
+								]);
+
+								const csvContent = [headers, ...rows]
+									.map((row) =>
+										row
+											.map(
+												(cell) =>
+													`"${String(cell).replace(/"/g, '""')}"`,
+											)
+											.join(","),
+									)
+									.join("\r\n");
+
+								const blob = new Blob(["\uFEFF" + csvContent], {
+									type: "text/csv;charset=utf-8;",
+								});
+								const url = URL.createObjectURL(blob);
+								const link = document.createElement("a");
+								link.href = url;
+								link.download = `reservas-bride-experience-${new Date()
+									.toISOString()
+									.slice(0, 10)}.csv`;
+								document.body.appendChild(link);
+								link.click();
+								document.body.removeChild(link);
+								URL.revokeObjectURL(url);
+							}}
+						>
+							Descargar Excel
+						</button>
+					</div>
 				</div>
 
 				{registros.length > 3 && (

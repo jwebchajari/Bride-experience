@@ -578,6 +578,13 @@ main {
   gap: 2px;
 }
 
+.admin-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
 .admin-count {
   font-size: 0.92rem;
   color: var(--taupe-deep);

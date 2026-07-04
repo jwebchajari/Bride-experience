@@ -22,8 +22,8 @@ export default function Home() {
 				</h1>
 				<Divider />
 				<p className="hero-sub">
-					Una experiencia creada para inspirarte en uno de los
-					momentos más especiales de tu vida.
+					Un encuentro diseñado para inspirarte, descubrir tendencias
+					y sentir la magia de tu próximo gran día.
 				</p>
 				<a href="#reserva" className="hero-cta">
 					Reservar mi lugar
@@ -35,15 +35,20 @@ export default function Home() {
 					El encuentro
 				</h2>
 				<p>
-					Este encuentro nace con el deseo de crear un espacio de
-					inspiración para futuras novias. Una tarde pensada para
-					disfrutar, conectar y vivir experiencias únicas junto a
-					diferentes profesionales del rubro.
+					Un espacio exclusivo en Chajarí, Entre Ríos, para futuras
+					novias que quieren vivir una tarde con inspiración, consejos
+					y profesionales del mundo nupcial.
 				</p>
 				<p>
-					Habrá propuestas, detalles, ideas, algo rico para compartir
-					y la posibilidad de probarte distintos estilos de vestidos
-					junto a <em>Atelier Privé</em>.
+					El evento se realizará el 8 de agosto de 15 a 18 hs. Será
+					una experiencia con ideas de estilo, propuestas de
+					ambientación, asesoramiento y la posibilidad de probarte
+					vestidos junto a<em>Atelier Privé</em>.
+				</p>
+				<p>
+					Plazas limitadas. Una vez inscriptas, nuestro equipo se
+					contactará para confirmar tu lugar y compartir todos los
+					detalles.
 				</p>
 				<p className="intro-price">Inversión: $50.000</p>
 			</section>
@@ -58,8 +63,8 @@ export default function Home() {
 					Reservá tu lugar
 				</h2>
 				<p className="form-lead">
-					Dejanos tus datos y te contactamos con todos los detalles
-					del evento.
+					Dejanos tus datos y te contactaremos en breve con la
+					confirmación y toda la información del evento.
 				</p>
 				<ContactForm />
 			</section>
