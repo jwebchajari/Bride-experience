@@ -45,6 +45,15 @@ main {
   padding: 96px 0 72px;
 }
 
+.hero-price {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--taupe-deep);
+}
+
 .eyebrow {
   font-size: 0.78rem;
   font-weight: 400;
@@ -136,6 +145,16 @@ main {
   max-width: 54ch;
   margin: 0 auto 18px;
   font-size: 1.05rem;
+}
+
+.intro-price {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  text-align: center;
 }
 
 .intro em {
@@ -336,7 +355,406 @@ main {
   html {
     scroll-behavior: auto;
   }
+
   * {
     transition: none !important;
+  }
+}
+
+/* ---------- Panel de administración (mobile-first) ---------- */
+
+.admin {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 14px 72px;
+}
+
+.admin-shell {
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.98) 0%, rgba(247, 244, 238, 0.96) 100%);
+  border: 1px solid rgba(139, 124, 106, 0.18);
+  box-shadow: 0 16px 44px rgba(74, 65, 54, 0.08);
+  border-radius: 24px;
+  padding: 16px;
+}
+
+.admin-login {
+  min-height: 94svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.login-ambient span {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(228, 221, 208, 0.45);
+  filter: blur(1px);
+}
+
+.login-ambient span:nth-child(1) {
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  left: -40px;
+}
+
+.login-ambient span:nth-child(2) {
+  width: 120px;
+  height: 120px;
+  bottom: 40px;
+  right: -20px;
+}
+
+.login-ambient span:nth-child(3) {
+  width: 90px;
+  height: 90px;
+  top: 50%;
+  left: 12%;
+}
+
+.login-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+}
+
+.admin-login-title {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--taupe-deep);
+  margin: 6px 0 10px;
+}
+
+.admin-login-copy {
+  font-size: 0.96rem;
+  color: var(--taupe-deep);
+  margin: 0 auto 20px;
+  max-width: 34ch;
+}
+
+.login-card {
+  width: 100%;
+  background: rgba(255, 253, 249, 0.96);
+  border: 1px solid rgba(139, 124, 106, 0.2);
+  border-radius: 22px;
+  padding: 22px 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  box-shadow: 0 16px 40px rgba(74, 65, 54, 0.08);
+}
+
+.login-card label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--taupe-deep);
+}
+
+.login-card input {
+  font: inherit;
+  font-size: 1rem;
+  padding: 14px 15px;
+  background: var(--paper);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  width: 100%;
+  color: var(--ink);
+  min-height: 48px;
+}
+
+.login-card input:focus {
+  outline: 2px solid var(--taupe);
+  outline-offset: 2px;
+}
+
+.admin-back {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--taupe-deep);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--taupe);
+  padding-bottom: 2px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(139, 124, 106, 0.18);
+}
+
+.admin-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-header .eyebrow {
+  margin-bottom: 0;
+  font-size: 0.62rem;
+}
+
+.admin-title {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 4.2vw, 1.7rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--taupe-deep);
+  line-height: 1.1;
+}
+
+.admin-subtitle {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--taupe);
+  max-width: 32ch;
+}
+
+.ghost-button {
+  background: none;
+  border: 1px solid var(--taupe);
+  color: var(--taupe-deep);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  cursor: pointer;
+  min-height: 44px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ghost-button:hover:not(:disabled),
+.ghost-button:focus-visible {
+  background: var(--taupe);
+  color: var(--white);
+}
+
+.ghost-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 14px 0;
+  padding: 12px 14px;
+  background: rgba(247, 244, 238, 0.85);
+  border: 1px solid rgba(139, 124, 106, 0.16);
+  border-radius: 16px;
+}
+
+.admin-toolbar-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-count {
+  font-size: 0.92rem;
+  color: var(--taupe-deep);
+}
+
+.admin-hint {
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.admin-search {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  padding: 13px 15px;
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  color: var(--ink);
+  margin-bottom: 16px;
+  min-height: 48px;
+}
+
+.admin-search:focus {
+  outline: 2px solid var(--taupe);
+  outline-offset: 2px;
+}
+
+.admin-empty {
+  text-align: center;
+  background: var(--white);
+  border: 1px solid rgba(139, 124, 106, 0.18);
+  border-radius: 18px;
+  padding: 36px 20px;
+  margin-top: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.admin-empty span {
+  display: block;
+  color: var(--taupe);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.admin-empty-search {
+  text-align: center;
+  color: var(--taupe-deep);
+  padding: 24px 0;
+}
+
+.admin-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reserva-card {
+  background: var(--white);
+  border: 1px solid rgba(139, 124, 106, 0.16);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(74, 65, 54, 0.06);
+}
+
+.reserva-top {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.reserva-nombre {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  font-size: 1.12rem;
+  letter-spacing: 0.04em;
+  color: var(--taupe-deep);
+  overflow-wrap: anywhere;
+}
+
+.reserva-fecha {
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.reserva-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reserva-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.98rem;
+  padding: 10px 12px;
+  background: var(--paper);
+  border: 1px solid var(--sand);
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.reserva-link:hover,
+.reserva-link:focus-visible {
+  border-color: var(--taupe);
+}
+
+.reserva-detalle {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.reserva-detalle span {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--taupe-deep);
+  margin-right: 6px;
+}
+
+.reserva-mensaje {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--sand);
+  font-size: 0.95rem;
+  color: var(--taupe-deep);
+  font-style: italic;
+  overflow-wrap: anywhere;
+}
+
+/* Pantallas un poco más grandes: contacto en fila */
+@media (min-width: 480px) {
+  .admin {
+    padding: 24px 20px 80px;
+  }
+
+  .admin-shell {
+    padding: 20px;
+  }
+
+  .reserva-top {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .reserva-contacto {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .reserva-link {
+    flex: 1 1 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .admin-shell {
+    padding: 24px;
+  }
+
+  .admin-header {
+    align-items: center;
+  }
+
+  .admin-toolbar {
+    padding: 14px 16px;
   }
 }

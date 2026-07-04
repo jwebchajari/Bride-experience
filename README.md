@@ -25,8 +25,16 @@ Abrí http://localhost:3000
    | Variable | Valor |
    |---|---|
    | `NEXT_PUBLIC_SITE_URL` | La URL final del sitio, ej. `https://bride-experience.vercel.app` |
+   | `ADMIN_PASSWORD` | La contraseña para entrar al panel `/admin` |
+   | `FIREBASE_DB_SECRET` | (Recomendado) Secreto de la base de datos, para que el panel pueda leer aunque la lectura pública esté bloqueada. Se obtiene en Firebase: **Configuración del proyecto → Cuentas de servicio → Secretos de bases de datos** |
 
-   Esta variable se usa para que los metadatos Open Graph (imagen al compartir el link) apunten a la URL correcta.
+   `NEXT_PUBLIC_SITE_URL` se usa para que los metadatos Open Graph (imagen al compartir el link) apunten a la URL correcta. Para desarrollo local, creá un archivo `.env.local` con esas mismas variables.
+
+## Panel de administración
+
+En `/admin` hay un panel protegido por contraseña (la de `ADMIN_PASSWORD`) para ver todas las reservas: cantidad total, búsqueda, links directos a WhatsApp y email, y botón de actualizar. Está diseñado mobile-first para verlo cómodo desde el celular.
+
+La contraseña se verifica **en el servidor** (route handler de Next.js) y la lectura de Firebase también se hace desde el servidor usando `FIREBASE_DB_SECRET`, así ni la contraseña ni el secreto llegan nunca al navegador y las reglas de lectura pública pueden quedar cerradas.
 
 3. Deploy. Al compartir el link en WhatsApp / Instagram / Facebook se va a ver el logo (`public/logo.jpg`) con título y descripción.
 
